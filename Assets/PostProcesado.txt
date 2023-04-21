@@ -1,0 +1,7 @@
+Creamos un global volume. Le creamos un perfil y luego todos los efectos que queramos.
+
+Si queremos crear un volumen especifico para x zona podemos hacerlo con un box volume, sphere volume o convex volume. Ponemos a mano la zona en la que queremos hacer visible esos efectos de postprocesado y luego le creamos un nuevo perfil y los efectos que queramos. Luego podemos modificar el "Blend Distance", esto cambiará lo que tarda en cambiar de un volumen a otro dependiendo del collider del volumen local.
+
+Los canvas pueden ser afectados por los efectos de postprocesado, se pueden configurar acorde. Si le ponemos el rendermode en Overlay ignora los efectos de postprocesado, con el rendermode de Camera le afectaran, pero deberás seleccionar la camera (se puede scriptear para que pille siempre la main camera).
+
+Normalmente se usan varios canvas. Utilizar uno solo es muy malo para el rendimiento. Cada vez que se actualiza un elemento del canvas unity decide actualizar tambien todos los elementos del canvas, es mejor dividir los canvas por funciones.
